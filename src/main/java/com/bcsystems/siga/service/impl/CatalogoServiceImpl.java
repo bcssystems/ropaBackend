@@ -77,7 +77,7 @@ public class CatalogoServiceImpl implements CatalogoService {
         Categoria categoria = producto.getCategoria();
         return new CatalogoProductoResponse(
                 producto.getIdProducto(), producto.getSku(), producto.getNombre(), producto.getDescripcion(),
-                producto.getPrecioBase(), producto.getUnidadMedida(),
+                producto.getPrecioBase(), producto.getStockActual(), producto.getUnidadMedida(),
                 categoria != null ? categoria.getIdCategoria() : null,
                 categoria != null ? categoria.getNombre() : null,
                 principal, multimedia);
@@ -87,7 +87,7 @@ public class CatalogoServiceImpl implements CatalogoService {
         Categoria categoria = producto.getCategoria();
         return new CatalogoProductoListadoResponse(
                 producto.getIdProducto(), producto.getSku(), producto.getNombre(), producto.getPrecioBase(),
-                producto.getUnidadMedida(), categoria != null ? categoria.getIdCategoria() : null,
+                producto.getStockActual(), producto.getUnidadMedida(), categoria != null ? categoria.getIdCategoria() : null,
                 categoria != null ? categoria.getNombre() : null, imagenPrincipalUrl);
     }
 
